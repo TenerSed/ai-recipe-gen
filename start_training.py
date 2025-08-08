@@ -6,8 +6,8 @@ def start_training():
 				'start "" cmd /c "yolo task=detect mode=train '
 				'model=yolov8m.pt '
 				'data=data/fridge_data/data.yaml '
-				'epochs=30 imgsz=640 batch=32 name=fridge_yolo '
-				'device=0 amp=True workers=8 > train_log.txt 2>&1"'
+				'epochs=30 imgsz=640 batch=32 name=fridge_yolo cache=True '
+				'device=0 amp=True workers=12 > train_log.txt 2>&1"'
 		)
 	# Launch in new CMD window
 		subprocess.run(command, shell=True)
@@ -18,8 +18,8 @@ def resume_training():
         'start "" cmd /c "yolo task=detect mode=train '
         'model=runs/detect/fridge_yolo/weights/last.pt '
         'data=data/fridge_data/data.yaml '
-        'imgsz=640 '
-        'resume=True device=0 amp=True workers=8 > resume_log.txt 2>&1"'
+        'imgsz=640 cache=True '
+        'resume=True device=0 amp=True workers=12 > resume_log.txt 2>&1"'
     )
     subprocess.run(command, shell=True)
 
