@@ -4,7 +4,7 @@ def start_training():
 # YOLOv8 training command with AMP (automatic mixed precision) enabled
 		command = (
 				'start "" cmd /c "yolo task=detect mode=train '
-				'model=yolov8m.pt '
+				'model=yolov8l.pt '
 				'data=data/fridge_data/data.yaml '
 				'epochs=30 imgsz=640 batch=32 name=fridge_yolo cache=True '
 				'device=0 amp=True workers=12 > train_log.txt 2>&1"'
