@@ -18,7 +18,8 @@ def resume_training():
         'start "" cmd /c "yolo task=detect mode=train '
         'model=runs/detect/fridge_yolo2/weights/last.pt '
         'data=data/fridge_data/data.yaml '
-        'resume=True device=0 amp=True workers=8 > resume_log.txt 2>&1"'
+        'imgsz=640 '
+        'resume=True device=0 amp=True workers=6 > resume_log.txt 2>&1"'
     )
     subprocess.run(command, shell=True)
 
