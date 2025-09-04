@@ -5,7 +5,7 @@ from ultralytics import YOLO
 # Paths
 WATCH_FOLDER = "inference_images"
 OUTPUT_FOLDER = "predictions"
-MODEL_PATH = "../runs/detect/fridge_yolo/weights/best.pt"
+MODEL_PATH = "../runs/detect/fridge_yolo11_v1.0/weights/best.pt"
 
 # Create folders if they don't exist
 os.makedirs(WATCH_FOLDER, exist_ok=True)
