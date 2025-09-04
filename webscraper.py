@@ -21,8 +21,10 @@ os.makedirs(save_path, exist_ok=True)
 
 # --- Step 4: Scrape posts ---
 count = 0
-for submission in subreddit.hot(limit=5000):  # you can change hot/top/new and the limit
+scrape_count = 0
+for submission in subreddit.hot(limit=50000):  # you can change hot/top/new and the limit
     url = submission.url
+    scrape_count += 1
     if url.endswith((".jpg", ".jpeg", ".png")):
         try:
             response = requests.get(url, stream=True)
@@ -30,7 +32,7 @@ for submission in subreddit.hot(limit=5000):  # you can change hot/top/new and t
             with open(filename, "wb") as f:
                 for chunk in response.iter_content(1024):
                     f.write(chunk)
-            print(f"Saved {filename}")
+            print(f"Saved {filename} at post {scrape_count}")
             count += 1
         except Exception as e:
             print(f"Failed to download {url}: {e}")
