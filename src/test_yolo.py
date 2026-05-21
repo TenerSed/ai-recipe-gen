@@ -3,7 +3,7 @@ from ultralytics import YOLO
 def test_yolo():
     model = YOLO("yolov8n.pt")  # load the small pretrained model
     # Save results here instead of result.save()
-    results = model.predict(source="bus.jpg", conf=0.3, save=True, save_dir="runs/detect/test")
+    results = model.predict(source="bus.jpg", conf=0.3, save=True, project="runs/detect", name="test")
 
     result = results[0]
     print(f"Detected classes: {[model.names[int(cls)] for cls in result.boxes.cls]}")

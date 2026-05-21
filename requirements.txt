@@ -1,3 +1,14 @@
+# ── Notebook dependencies (CNN digit recognizer + rain prediction) ──────────
+# These are NOT pinned to exact versions to allow flexible installs.
+# The YOLO/torch packages below ARE pinned (they were auto-generated).
+tensorflow>=2.16
+keras>=3.0
+keras-cv>=0.9
+scikit-learn>=1.5
+visualkeras>=0.0.2
+graphviz>=0.20
+kagglehub>=0.3
+
 annotated-types==0.7.0
 anyio==4.9.0
 certifi==2025.7.14
